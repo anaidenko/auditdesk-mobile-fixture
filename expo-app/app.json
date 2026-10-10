@@ -1,0 +1,26 @@
+{
+    "expo": {
+        "name": "Larder",
+        "slug": "larder",
+        "version": "1.4.0",
+        "scheme": "larder",
+        "orientation": "portrait",
+        "ios": {
+            "bundleIdentifier": "com.larder.app",
+            "supportsTablet": false,
+            "infoPlist": {
+                "NSLocationWhenInUseUsageDescription": "Larder uses your location to show delivery slots near you.",
+                "NSFaceIDUsageDescription": "Larder uses Face ID to unlock the app.",
+                "NSAppTransportSecurity": {
+                    "NSAllowsArbitraryLoads": true
+                }
+            }
+        },
+        "android": {
+            "package": "com.larder.app",
+            "versionCode": 41,
+            "permissions": ["ACCESS_FINE_LOCATION", "USE_BIOMETRIC", "READ_CONTACTS", "RECORD_AUDIO", "READ_SMS"]
+        },
+        "plugins": ["expo-router", "expo-local-authentication", "expo-location"]
+    }
+}
