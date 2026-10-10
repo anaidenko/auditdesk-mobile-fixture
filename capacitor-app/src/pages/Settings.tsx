@@ -3,7 +3,8 @@ import { IonButton, IonContent, IonInput, IonItem, IonLabel, IonPage } from "@io
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import { setPin, signIn, signOut } from "../services/auth";
+import { signIn, signOut } from "../services/auth";
+import { setPin } from "../services/pin";
 
 export default function Settings() {
     const history = useHistory();

@@ -2,7 +2,7 @@ import { IonButton, IonContent, IonInput, IonPage, IonText } from "@ionic/react"
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import { checkPin } from "../services/auth";
+import { checkPin } from "../services/pin";
 
 export default function Lock() {
     const history = useHistory();

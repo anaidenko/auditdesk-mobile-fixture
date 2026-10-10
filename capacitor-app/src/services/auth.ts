@@ -1,7 +1,6 @@
 import { Preferences } from "@capacitor/preferences";
 
 const TOKEN = "fieldbook.token";
-const PIN = "fieldbook.pin";
 
 export async function signIn(email: string, password: string): Promise<void> {
     const res = await fetch(`${import.meta.env.VITE_API_URL ?? "https://api.fieldbook.example"}/auth/login`, {
@@ -20,14 +19,4 @@ export async function getToken(): Promise<string | null> {
 
 export async function signOut(): Promise<void> {
     await Preferences.remove({ key: TOKEN });
-}
-
-/** The four-digit PIN that unlocks the app between jobs, so technicians need not sign in again. */
-export async function setPin(pin: string): Promise<void> {
-    await Preferences.set({ key: PIN, value: pin });
-}
-
-export async function checkPin(entered: string): Promise<boolean> {
-    const { value } = await Preferences.get({ key: PIN });
-    return value !== null && value === entered;
 }
